@@ -24,4 +24,7 @@ public interface PersonaRepository extends CrudRepository<Persona, String> {
 
     @Ping
     public Boolean ping();
+    
+    @Find
+    public Optional<Persona> findByNombre(String nombre);
 }
