@@ -28,9 +28,17 @@ public class PersonaController {
 
     @GET
     @Path("{idpersona}")
-    public Persona findById(@PathParam("idpersona") String idpersona) {
+    public Persona queryById(@PathParam("idpersona") String idpersona) {
         return personaRepository.queryIdpersona(idpersona).orElseThrow(
-                () -> new WebApplicationException("There is no oceano with the id " + idpersona, Response.Status.NOT_FOUND));
+                () -> new WebApplicationException("No hay persona con el id " + idpersona, Response.Status.NOT_FOUND));
+    }
+    
+    @GET
+    @Path("/find/{nombre}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Persona findByNombre(@PathParam("nombre") String nombre ){
+        return personaRepository.findByNombre(nombre).orElseThrow(
+                () -> new WebApplicationException("No hay persona con el nombre " + nombre, Response.Status.NOT_FOUND));
     }
 
     @GET
