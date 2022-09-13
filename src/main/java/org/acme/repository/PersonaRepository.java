@@ -5,6 +5,7 @@
 package org.acme.repository;
 
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
+import com.jmoordb.core.annotation.repository.Find;
 import com.jmoordb.core.annotation.repository.Ping;
 import com.jmoordb.core.annotation.repository.Query;
 import com.jmoordb.core.annotation.repository.Repository;
